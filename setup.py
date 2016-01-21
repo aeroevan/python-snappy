@@ -26,7 +26,7 @@
 import sys
 from distutils.core import setup, Extension
 
-version = '0.5'
+version = '0.5.0.1'
 long_description = """
 Python bindings for the snappy compression library from Google.
 
