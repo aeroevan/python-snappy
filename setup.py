@@ -24,7 +24,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import sys
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 version = '0.5.0.1'
 long_description = """
@@ -39,11 +39,9 @@ snappymodule = Extension('_snappy',
                          sources=['snappymodule.cc', 'crc32c.c'])
 
 ext_modules = [snappymodule]
-packages = ['.']
 install_requires = []
 
 if 'PyPy' in sys.version:
-    from setuptools import setup
     ext_modules = []
     install_requires = ['cffi']
 
@@ -76,7 +74,7 @@ setup(
                  'Programming Language :: Python :: 3.1',
                  'Programming Language :: Python :: 3.2',
                  ],
-    ext_modules = ext_modules,
-    packages = packages,
-    install_requires = install_requires
+    ext_modules=ext_modules,
+    packages=['snappy', 'snappy_cffi'],
+    install_requires=install_requires,
 )

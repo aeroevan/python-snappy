@@ -418,7 +418,3 @@ def cmdline_main():
         method = hadoop_decompress
 
     method(src, dst)
-
-
-if __name__ == "__main__":
-    cmdline_main()
